@@ -5,16 +5,16 @@ interface MenuItemProps {
   title: string;
   description: string;
   price: number;
-  image?: string; // optional
+  image?: string;
 }
 
 export default function MenuItem({ title, description, price, image }: MenuItemProps) {
   return (
     <div className="menu-item">
+      <img src={image} alt={title} />
       <h2>{title}</h2>
       <p>{description}</p>
-      {image && <img src={image} alt={title} />}
-      <h3>₦{price}</h3>
+      <span className="price">₦{price}</span>
     </div>
   );
 }
